@@ -1,27 +1,25 @@
+# TMS-EVALUADOR.py
+Herramienta para el an谩lisis de particiones NTFS en busca de indicios sobre la manipulaci贸n de sellos temporales de los archivos, generando un timeline alternativo mostrando las incoherencias detectadas.
+### ENTORNO:
+Requiere un entorno Windows para su ejecuci贸n
+### INSTALACI脫N
+* Descarga de [Python 2.7.11](https://www.python.org/download/releases/2.7.11)
+* Descarga de [SleuthKit para Windows](https://github.com/sleuthkit/sleuthkit/releases/download/sleuthkit-4.3.0/sleuthkit-4.3.0-win32.zip)
+* Descarga de parsers NTFS: [Mft2Csv](https://github.com/jschicht/Mft2Csv), [UsnJrnl2Csv](https://github.com/jschicht/UsnJrnl2Csv), [LogFileParser](https://github.com/jschicht/LogFileParser).
+* Actualizaci贸n [Sqlite3 para python 2.7 en Windows](https://www.sqlite.org/2016/sqlite-dll-win32-x86-3150100.zip).
 
-FUNCIONALIDAD:
-Analiza particiones NTFS en busca de indicios sobre la manipulaci髇 de sellos temporales de los archivos, generando un timeline alternativo mostrando las incoherencias detectadas.
+Sleuthkit y los parsers deber谩n ser instalarse en un mismo directorio accesible localmente
+### ELEMENTO DE AN脕LISIS:
+Imagen RAW de un volumen NTFS
+### USO:
+$ tms-evaluador.py -i <imagen>  -o <fichero-CSV-salida> -p <ruta-parsers>
 
+Ejemplo: $ tms-evaluador.py -i  img.dd -o salida -p parsers
 
-REQUISITOS:
-Disponer de un entorno Windows para la ejecuci髇
-Instalaci髇 del software:
-	1.- Python 2.7.11 Descarga en https://www.python.org/download/releases/2.7.11
+### LICENCIA:
+Open Source
 
-	2.- SleuthKit para Windows. En descarga de https://github.com/sleuthkit/sleuthkit/releases/download/sleuthkit-4.3.0/sleuthkit-4.3.0-win32.zip
+### Proyecto
+En el marco del TFM Unir sobre la Detecci贸n Antiforense Open Source.
 
-	3.- Parsers NTFS: Mft2Csv, UsnJrnl2Csv, LogFileParser. En descarga de https://github.com/jschicht/
-	
-	4.- Actualizaci髇 sqlite3 para python 2.7 en Windows. Descarga en https://www.sqlite.org/2016/sqlite-dll-win32-x86-3150100.zip.
-
-Sleuthkit y los parsers deber醤 ser instalarse en un mismo directorio accesible localmente
-
-IMAGEN A ANALIZAR:
-Disponer de imagen RAW de partici髇 en formato NTFS
-
-USO:
-tms-evaluador.py -i <fichero-imagen>  -o <fichero-salida> -p <ruta-parsers>
-Ejemplo: tms-evaluador.py -i  img.dd -o salida -p parsers
-
-
-
+Autor: Jose B Torres.
